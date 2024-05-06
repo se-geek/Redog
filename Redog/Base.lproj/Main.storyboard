@@ -1,24 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qcq-cw-eW1">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Redog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V9K-uh-YKJ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Dog Generator!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-Sv-d2R">
+                                        <rect key="frame" x="12" y="20" width="369" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="JeS-PV-hld"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-2I-1hA" customClass="RoundedBorderButton" customModule="Redog" customModuleProvider="target">
+                                        <rect key="frame" x="125.00000000000001" y="340" width="143.33333333333337" height="35"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.52549019607843139" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Generate Dogs!"/>
+                                        <connections>
+                                            <action selector="onGenerateButtonClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayG-Aq-r9m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uno-pm-lln" customClass="RoundedBorderButton" customModule="Redog" customModuleProvider="target">
+                                        <rect key="frame" x="71.000000000000014" y="391" width="251.33333333333337" height="35"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="My Recently Generated Dogs!"/>
+                                        <connections>
+                                            <action selector="onMyRecentDogsButtonClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6OT-Ai-UHo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oKK-2I-1hA" firstAttribute="centerX" secondItem="V9K-uh-YKJ" secondAttribute="centerX" id="Otn-A8-Pls"/>
+                                    <constraint firstItem="uno-pm-lln" firstAttribute="top" secondItem="oKK-2I-1hA" secondAttribute="bottom" constant="16" id="ZqH-jv-bnz"/>
+                                    <constraint firstItem="uno-pm-lln" firstAttribute="centerX" secondItem="V9K-uh-YKJ" secondAttribute="centerX" id="jvz-Mz-xNZ"/>
+                                    <constraint firstItem="fe3-Sv-d2R" firstAttribute="leading" secondItem="V9K-uh-YKJ" secondAttribute="leading" constant="12" id="mT7-1L-taN"/>
+                                    <constraint firstItem="fe3-Sv-d2R" firstAttribute="top" secondItem="V9K-uh-YKJ" secondAttribute="top" constant="20" id="ovj-Ut-zfh"/>
+                                    <constraint firstAttribute="trailing" secondItem="fe3-Sv-d2R" secondAttribute="trailing" constant="12" id="veW-Pq-n6q"/>
+                                    <constraint firstItem="oKK-2I-1hA" firstAttribute="centerY" secondItem="V9K-uh-YKJ" secondAttribute="centerY" id="wHk-Jb-oLg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V9K-uh-YKJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0mj-qG-4vx"/>
+                            <constraint firstItem="V9K-uh-YKJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BN6-DL-LHN"/>
+                            <constraint firstItem="V9K-uh-YKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sJs-Fd-nGF"/>
+                            <constraint firstItem="V9K-uh-YKJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wF6-zg-wBe"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cZ7-dd-Oft"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1038.9312977099237" y="-2.1126760563380285"/>
+        </scene>
+        <!--Generate Dogs View Controller-->
+        <scene sceneID="NM3-wU-wNS">
+            <objects>
+                <viewController storyboardIdentifier="GenerateDogsViewController" id="Ain-Fu-Rh2" customClass="GenerateDogsViewController" customModule="Redog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fZ8-0Y-tqK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCb-xM-E7U">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lk7-bP-i3R">
+                                        <rect key="frame" x="20" y="100" width="353" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Uix-nr-JJf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6L-YS-6ba" customClass="RoundedBorderButton" customModule="Redog" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="450" width="99.333333333333314" height="35"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Generate!"/>
+                                        <connections>
+                                            <action selector="onGenerateButtonAction:" destination="Ain-Fu-Rh2" eventType="touchUpInside" id="fj5-CV-ITo"/>
+                                        </connections>
+                                    </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wR6-34-GwB">
+                                        <rect key="frame" x="186" y="248" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wR6-34-GwB" firstAttribute="centerX" secondItem="lk7-bP-i3R" secondAttribute="centerX" id="91E-d1-gAQ"/>
+                                    <constraint firstItem="lk7-bP-i3R" firstAttribute="top" secondItem="YCb-xM-E7U" secondAttribute="top" constant="100" id="CeE-oi-4YZ"/>
+                                    <constraint firstItem="lk7-bP-i3R" firstAttribute="leading" secondItem="YCb-xM-E7U" secondAttribute="leading" constant="20" id="fib-Qx-uIR"/>
+                                    <constraint firstItem="wR6-34-GwB" firstAttribute="centerY" secondItem="lk7-bP-i3R" secondAttribute="centerY" id="nbr-tx-Nr5"/>
+                                    <constraint firstAttribute="trailing" secondItem="lk7-bP-i3R" secondAttribute="trailing" constant="20" id="nxi-ls-w3N"/>
+                                    <constraint firstItem="s6L-YS-6ba" firstAttribute="top" secondItem="lk7-bP-i3R" secondAttribute="bottom" constant="50" id="pJv-sg-9Fn"/>
+                                    <constraint firstItem="s6L-YS-6ba" firstAttribute="centerX" secondItem="YCb-xM-E7U" secondAttribute="centerX" id="u5c-gy-03h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KYi-54-Qsg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YCb-xM-E7U" firstAttribute="top" secondItem="KYi-54-Qsg" secondAttribute="top" id="3uJ-us-LTh"/>
+                            <constraint firstItem="YCb-xM-E7U" firstAttribute="leading" secondItem="KYi-54-Qsg" secondAttribute="leading" id="Wbg-mP-Glz"/>
+                            <constraint firstItem="KYi-54-Qsg" firstAttribute="trailing" secondItem="YCb-xM-E7U" secondAttribute="trailing" id="YKt-Hb-N2J"/>
+                            <constraint firstItem="KYi-54-Qsg" firstAttribute="bottom" secondItem="YCb-xM-E7U" secondAttribute="bottom" id="hto-eP-ZXU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityLoader" destination="wR6-34-GwB" id="xfX-Hs-0LB"/>
+                        <outlet property="dogImageView" destination="lk7-bP-i3R" id="Cmt-6e-ZIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBv-Qr-PTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947.3282442748091" y="-2.1126760563380285"/>
+        </scene>
+        <!--My Recently Dogs View Controller-->
+        <scene sceneID="XaE-G2-sBQ">
+            <objects>
+                <viewController storyboardIdentifier="MyRecentlyDogsViewController" id="cd8-ZB-kvC" customClass="MyRecentlyDogsViewController" customModule="Redog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jvq-w0-Tlj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOl-Cl-V6B">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pdq-r0-tRx">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="IMf-Qp-VMP"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RsX-dQ-0LG">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Hxd-lL-weY">
+                                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="glJ-6j-BGW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-kc-NCi" customClass="RoundedBorderButton" customModule="Redog" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="400" width="113.33333333333331" height="35"/>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.52549019610000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Clear Dogs!"/>
+                                        <connections>
+                                            <action selector="clearDogsButtonAction:" destination="cd8-ZB-kvC" eventType="touchUpInside" id="xD2-aW-CWa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Wcq-kc-NCi" firstAttribute="top" secondItem="pdq-r0-tRx" secondAttribute="bottom" constant="50" id="C0d-Kp-3ws"/>
+                                    <constraint firstItem="pdq-r0-tRx" firstAttribute="leading" secondItem="AOl-Cl-V6B" secondAttribute="leading" id="eDW-4U-WIt"/>
+                                    <constraint firstItem="pdq-r0-tRx" firstAttribute="top" secondItem="AOl-Cl-V6B" secondAttribute="top" constant="50" id="kAz-xc-2aO"/>
+                                    <constraint firstAttribute="trailing" secondItem="pdq-r0-tRx" secondAttribute="trailing" id="kVT-mN-kfw"/>
+                                    <constraint firstItem="Wcq-kc-NCi" firstAttribute="centerX" secondItem="AOl-Cl-V6B" secondAttribute="centerX" id="lZc-dC-w5I"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c6T-qO-jT8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c6T-qO-jT8" firstAttribute="trailing" secondItem="AOl-Cl-V6B" secondAttribute="trailing" id="6Da-Na-K57"/>
+                            <constraint firstItem="AOl-Cl-V6B" firstAttribute="leading" secondItem="c6T-qO-jT8" secondAttribute="leading" id="FcO-lu-IkA"/>
+                            <constraint firstItem="c6T-qO-jT8" firstAttribute="bottom" secondItem="AOl-Cl-V6B" secondAttribute="bottom" id="dYa-ue-TJq"/>
+                            <constraint firstItem="AOl-Cl-V6B" firstAttribute="top" secondItem="c6T-qO-jT8" secondAttribute="top" id="x0I-ZM-dOg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dogCollectionView" destination="pdq-r0-tRx" id="Vxr-od-aeZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1K-Q6-QIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="-2"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xcw-La-mYY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qcq-cw-eW1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y20-Rv-PHj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oRR-ry-WNC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZs-5u-VPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
