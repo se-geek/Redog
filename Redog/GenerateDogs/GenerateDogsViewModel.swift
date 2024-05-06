@@ -8,7 +8,6 @@
 import Foundation
 
 protocol GenerateDogsViewModelDelegate: AnyObject {
-    func showLoader(show: Bool)
     func showAlert(message: String)
     func updateImage(imageData: Data)
     
@@ -24,7 +23,7 @@ class GenerateDogsViewModel {
     }
     
     func getDogImage() {
-        delegate?.showLoader(show: true)
+        
         APIRequester().getDogImages(for: .getDogs) { (result, response) in
             switch result {
             case .success(let response):
@@ -40,7 +39,6 @@ class GenerateDogsViewModel {
                         }
                     }
                 }
-                self.delegate?.showLoader(show: false)
             case .failure(let failure):
                 self.delegate?.showAlert(message: failure.localizedDescription)
             }

@@ -30,13 +30,7 @@ class GenerateDogsViewController: UIViewController {
 }
 
 extension GenerateDogsViewController: GenerateDogsViewModelDelegate {
-    func showLoader(show: Bool) {
-        if show {
-            activityLoader.startAnimating()
-        } else {
-            activityLoader.stopAnimating()
-        }
-    }
+  
     
     func showAlert(message: String) {
         let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)

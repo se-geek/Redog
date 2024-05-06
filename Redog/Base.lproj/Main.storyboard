@@ -104,16 +104,11 @@
                                             <action selector="onGenerateButtonAction:" destination="Ain-Fu-Rh2" eventType="touchUpInside" id="fj5-CV-ITo"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wR6-34-GwB">
-                                        <rect key="frame" x="186" y="248" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="wR6-34-GwB" firstAttribute="centerX" secondItem="lk7-bP-i3R" secondAttribute="centerX" id="91E-d1-gAQ"/>
                                     <constraint firstItem="lk7-bP-i3R" firstAttribute="top" secondItem="YCb-xM-E7U" secondAttribute="top" constant="100" id="CeE-oi-4YZ"/>
                                     <constraint firstItem="lk7-bP-i3R" firstAttribute="leading" secondItem="YCb-xM-E7U" secondAttribute="leading" constant="20" id="fib-Qx-uIR"/>
-                                    <constraint firstItem="wR6-34-GwB" firstAttribute="centerY" secondItem="lk7-bP-i3R" secondAttribute="centerY" id="nbr-tx-Nr5"/>
                                     <constraint firstAttribute="trailing" secondItem="lk7-bP-i3R" secondAttribute="trailing" constant="20" id="nxi-ls-w3N"/>
                                     <constraint firstItem="s6L-YS-6ba" firstAttribute="top" secondItem="lk7-bP-i3R" secondAttribute="bottom" constant="50" id="pJv-sg-9Fn"/>
                                     <constraint firstItem="s6L-YS-6ba" firstAttribute="centerX" secondItem="YCb-xM-E7U" secondAttribute="centerX" id="u5c-gy-03h"/>
@@ -130,7 +125,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activityLoader" destination="wR6-34-GwB" id="xfX-Hs-0LB"/>
                         <outlet property="dogImageView" destination="lk7-bP-i3R" id="Cmt-6e-ZIb"/>
                     </connections>
                 </viewController>
